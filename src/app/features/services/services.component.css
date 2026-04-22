@@ -1,0 +1,48 @@
+.services-hero {
+  padding-top: 150px;
+  text-align: center;
+}
+
+.service-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 40px;
+  margin-top: 60px;
+}
+
+.detail-card {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.card-header .icon {
+  font-size: 2.5rem;
+}
+
+.feature-list {
+  list-style: none;
+  margin-top: 10px;
+}
+
+.feature-list li {
+  padding-left: 25px;
+  position: relative;
+  margin-bottom: 10px;
+  color: var(--text-dim);
+}
+
+.feature-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  font-weight: bold;
+}

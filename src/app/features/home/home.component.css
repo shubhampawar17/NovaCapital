@@ -1,0 +1,152 @@
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.hero-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, var(--primary-glow) 0%, transparent 70%);
+  z-index: -1;
+  filter: blur(80px);
+  opacity: 0.6;
+}
+
+.hero-content {
+  max-width: 900px;
+}
+
+.hero-subtitle {
+  font-size: 1.3rem;
+  margin-bottom: 40px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-btns {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.btn-secondary {
+  border: 1px solid var(--glass-border);
+  color: white;
+  padding: 12px 30px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background: var(--bg-glass);
+  border-color: white;
+}
+
+/* Services */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.service-card {
+  padding: 40px;
+  text-align: center;
+}
+
+.service-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.service-card h3 {
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+}
+
+/* Brand Story */
+.story-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.image-placeholder {
+  height: 400px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.poster-mockup {
+  font-size: 6rem;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.05);
+  letter-spacing: 10px;
+}
+
+.stats-glow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, var(--primary-glow) 0%, transparent 100%);
+  bottom: 0;
+  opacity: 0.3;
+}
+
+/* SEO Boost */
+.boost-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 60px;
+  align-items: center;
+  gap: 40px;
+  background: linear-gradient(135deg, rgba(0, 162, 255, 0.1), rgba(112, 0, 255, 0.1));
+}
+
+.boost-content h2 {
+  text-align: left;
+}
+
+.boost-graphic {
+  display: flex;
+  justify-content: center;
+}
+
+.rocket-wrap {
+  font-size: 8rem;
+  filter: drop-shadow(0 0 30px var(--primary-glow));
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+@media (max-width: 992px) {
+  .story-grid, .boost-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .boost-content h2 {
+    text-align: center;
+  }
+}
