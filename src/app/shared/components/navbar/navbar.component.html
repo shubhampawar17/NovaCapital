@@ -1,24 +1,19 @@
 <nav class="navbar" [class.scrolled]="isScrolled">
   <div class="container nav-container">
     <div class="logo">
-      <svg width="180" height="40" viewBox="0 0 180 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M10 30L20 10H25L15 30H10Z" fill="white"/>
-        <path d="M22 30L32 10H37L27 30H22Z" fill="white"/>
-        <path d="M30 15L35 5L40 15L35 10L30 15Z" fill="#00a2ff"/> <!-- Star placeholder -->
-        <text x="45" y="28" fill="white" font-family="Outfit" font-weight="700" font-size="22">Nova</text>
-        <text x="45" y="38" fill="#a0a0a0" font-family="Outfit" font-weight="400" font-size="10" letter-spacing="2">CAPITAL</text>
-      </svg>
+      <img src="assets/logo.png" alt="Nova Capital" height="60">
+      <span class="brand-name">Nova <span class="text-gradient">Capital</span></span>
     </div>
     
-    <div class="nav-links">
-      <a routerLink="/home" routerLinkActive="active">Home</a>
-      <a routerLink="/about" routerLinkActive="active">About</a>
-      <a routerLink="/services" routerLinkActive="active">Services</a>
-      <a routerLink="/portfolio" routerLinkActive="active">Portfolio</a>
-      <a routerLink="/contact" class="btn-nav">Contact Us</a>
+    <div class="nav-links" [class.mobile-open]="isMenuOpen">
+      <a routerLink="/home" routerLinkActive="active" (click)="closeMenu()">Home</a>
+      <a routerLink="/about" routerLinkActive="active" (click)="closeMenu()">About</a>
+      <a routerLink="/services" routerLinkActive="active" (click)="closeMenu()">Services</a>
+      <a routerLink="/portfolio" routerLinkActive="active" (click)="closeMenu()">Portfolio</a>
+      <a routerLink="/contact" class="btn-nav" (click)="closeMenu()">Contact Us</a>
     </div>
 
-    <div class="mobile-menu-btn">
+    <div class="mobile-menu-btn" (click)="toggleMenu()" [class.open]="isMenuOpen">
       <span></span>
       <span></span>
       <span></span>

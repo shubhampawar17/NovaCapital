@@ -5,10 +5,22 @@
 
 .service-detail-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
   margin-top: 60px;
 }
+
+@media (max-width: 768px) {
+  .detail-card {
+    padding: 30px 20px;
+  }
+  .services-cta .cta-box {
+    padding: 40px 20px;
+    border-radius: 20px;
+    margin: 0 10px;
+  }
+}
+
 
 .detail-card {
   padding: 40px;
@@ -46,3 +58,24 @@
   color: var(--primary);
   font-weight: bold;
 }
+
+.services-cta {
+  padding: 100px 0;
+  text-align: center;
+}
+
+.services-cta .cta-box {
+  padding: 60px;
+  background: linear-gradient(135deg, rgba(0, 162, 255, 0.1), rgba(112, 0, 255, 0.1));
+}
+
+.services-cta h2 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.services-cta p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+

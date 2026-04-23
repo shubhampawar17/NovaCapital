@@ -4,7 +4,7 @@
   left: 0;
   right: 0;
   z-index: 1000;
-  padding: 20px 0;
+  padding: 30px 0;
   transition: all 0.4s ease;
   background: transparent;
 }
@@ -22,6 +22,21 @@
   justify-content: space-between;
   align-items: center;
 }
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+}
+
+.brand-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  letter-spacing: -0.5px;
+}
+
 
 .nav-links {
   display: flex;
@@ -62,11 +77,56 @@
   transition: 0.3s;
 }
 
-@media (max-width: 768px) {
-  .nav-links {
-    display: none;
+@media (max-width: 992px) {
+  .navbar {
+    padding: 15px 0;
   }
-  .mobile-menu-btn {
-    display: flex;
+  
+  .brand-name {
+    font-size: 1.2rem;
   }
 }
+
+@media (max-width: 768px) {
+  .brand-name {
+    display: none; /* Hide brand name on very small screens to avoid overlap */
+  }
+
+  .nav-links {
+    display: flex;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(20px);
+    flex-direction: column;
+    padding: 100px 40px;
+    transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1000;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .nav-links.mobile-open {
+    right: 0;
+  }
+
+  .mobile-menu-btn {
+    display: flex;
+    z-index: 1001;
+  }
+
+  .mobile-menu-btn.open span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+  }
+
+  .mobile-menu-btn.open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .mobile-menu-btn.open span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+}
+

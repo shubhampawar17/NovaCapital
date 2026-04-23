@@ -54,6 +54,22 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
+.brand-badge {
+  display: inline-block;
+  padding: 8px 20px;
+  background: rgba(0, 162, 255, 0.1);
+  border: 1px solid rgba(0, 162, 255, 0.3);
+  color: var(--primary);
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 25px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 20px rgba(0, 162, 255, 0.2);
+}
+
 h1 {
   font-size: clamp(2.5rem, 8vw, 5rem);
   font-weight: 700;
@@ -92,6 +108,36 @@ p {
   box-shadow: 0 0 20px var(--primary-glow);
 }
 
+.btn-outline {
+  border: 1px solid var(--glass-border);
+  color: white;
+  padding: 12px 30px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+  transition: all 0.3s ease;
+  background: transparent;
+  cursor: pointer;
+}
+
+.btn-outline:hover {
+  background: var(--bg-glass);
+  border-color: var(--primary);
+  transform: translateY(-2px);
+}
+
+.btn-text {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+  transition: opacity 0.3s ease;
+}
+
+.btn-text:hover {
+  opacity: 0.8;
+}
+
 /* Animations */
 @keyframes fadeInUp {
   from {
@@ -115,4 +161,78 @@ section {
 .container {
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 25px; /* Added padding to prevent edge-touching on mobile */
 }
+
+.section-title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-desc {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 50px;
+  font-size: 1.2rem;
+  color: var(--text-dim);
+}
+
+/* Advanced Icon Styles */
+.service-icon-wrap {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.icon-svg {
+  width: 35px;
+  height: 35px;
+  color: white;
+  filter: drop-shadow(0 0 5px var(--primary-glow));
+  z-index: 2;
+  transition: all 0.5s ease;
+}
+
+.icon-bg-glow {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, var(--primary-glow) 0%, transparent 70%);
+  opacity: 0;
+  transition: all 0.5s ease;
+  z-index: 1;
+}
+
+.glass-card:hover .service-icon-wrap,
+.feature-item:hover .service-icon-wrap,
+.method:hover .service-icon-wrap {
+  background: rgba(0, 162, 255, 0.1);
+  border-color: var(--primary);
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 10px 30px rgba(0, 162, 255, 0.2);
+}
+
+.glass-card:hover .icon-bg-glow,
+.feature-item:hover .icon-bg-glow,
+.method:hover .icon-bg-glow {
+  opacity: 0.5;
+}
+
+.glass-card:hover .icon-svg,
+.feature-item:hover .icon-svg,
+.method:hover .icon-svg {
+  color: var(--primary);
+  transform: scale(1.1);
+}
+
+
+
+
