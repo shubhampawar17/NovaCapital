@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
+  activeIndex: number | null = 0;
 
+  toggleFAQ(index: number) {
+    this.activeIndex = this.activeIndex === index ? null : index;
+  }
 }

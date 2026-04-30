@@ -1,5 +1,6 @@
 .hero {
-  height: 100vh;
+  min-height: 100vh;
+  padding: 120px 0 80px;
   display: flex;
   align-items: center;
   position: relative;
@@ -159,6 +160,301 @@
   margin-bottom: 30px;
 }
 
+/* Our Process */
+.our-process {
+  position: relative;
+  padding: 150px 0 100px; /* Increased top padding to push title inside globe */
+  overflow: hidden;
+  background: #050505;
+}
+
+.process-globe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1000px;
+  height: 1000px;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle at center, rgba(0, 162, 255, 0.05) 0%, transparent 70%);
+  border: 1px solid rgba(0, 162, 255, 0.3); /* Electric Blue Outline */
+  box-shadow: 
+    0 0 50px rgba(0, 162, 255, 0.1),
+    inset 0 0 80px rgba(0, 162, 255, 0.1);
+  pointer-events: none;
+  filter: drop-shadow(0 0 10px var(--primary-glow));
+  z-index: 0;
+  opacity: 0.4; /* Softened brightness significantly */
+}
+
+.process-globe::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  border-radius: 50%;
+  /* Dotted pattern */
+  background-image: radial-gradient(rgba(255, 255, 255, 0.7) 1.5px, transparent 2px);
+  background-size: 10px 10px;
+  /* Mask it with the realistic world map */
+  -webkit-mask-image: url('https://upload.wikimedia.org/wikipedia/commons/e/ec/World_map_blank_without_borders.svg');
+  -webkit-mask-size: 1600px auto;
+  -webkit-mask-repeat: repeat-x;
+  -webkit-mask-position: center;
+  mask-image: url('https://upload.wikimedia.org/wikipedia/commons/e/ec/World_map_blank_without_borders.svg');
+  mask-size: 1600px auto;
+  mask-repeat: repeat-x;
+  mask-position: center;
+  /* Animate both to keep dots fixed relative to map */
+  animation: revolveDottedMap 50s linear infinite;
+  z-index: 2;
+  opacity: 0.8;
+}
+
+.process-globe::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  border-radius: 50%;
+  /* Grid lines and specular highlight */
+  background-image: 
+    radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.15) 0%, transparent 60%),
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 100% 100%, 40px 40px, 40px 40px;
+  /* Spherical edge shadow */
+  box-shadow: inset 0 0 80px rgba(5, 5, 5, 0.9);
+  z-index: 3;
+}
+
+@keyframes revolveDottedMap {
+  from { 
+    background-position: 0 0;
+    -webkit-mask-position: 0 center;
+    mask-position: 0 center;
+  }
+  to { 
+    background-position: -1600px 0;
+    -webkit-mask-position: -1600px center;
+    mask-position: -1600px center;
+  }
+}
+
+.our-process .container {
+  position: relative;
+  z-index: 1;
+}
+
+.process-steps {
+  position: relative;
+  max-width: 900px;
+  margin: 80px auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.timeline-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, transparent, var(--primary), var(--secondary), transparent);
+  transform: translateX(-50%);
+  opacity: 0.5;
+  box-shadow: 0 0 15px var(--primary-glow);
+}
+
+.process-card {
+  position: relative;
+  width: 45%;
+  padding: 30px;
+  z-index: 2;
+}
+
+.process-card:nth-child(even) {
+  align-self: flex-start;
+  text-align: right;
+}
+
+.process-card:nth-child(odd) {
+  align-self: flex-end;
+  text-align: left;
+}
+
+.step-marker {
+  position: absolute;
+  top: 50%;
+  width: 50px;
+  height: 50px;
+  background: var(--bg-main);
+  border: 2px solid var(--primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: white;
+  transform: translateY(-50%);
+  z-index: 3;
+  box-shadow: 0 0 20px var(--primary-glow);
+}
+
+.process-card:nth-child(even) .step-marker {
+  right: -75px;
+}
+
+.process-card:nth-child(odd) .step-marker {
+  left: -75px;
+}
+
+@media (max-width: 768px) {
+  .our-process {
+    padding: 60px 0;
+  }
+
+  .process-globe {
+    width: 400px;
+    height: 400px;
+    top: 600px;
+    left: 50%;
+    opacity: 0.4;
+  }
+
+  .section-title {
+    font-size: 2.2rem;
+  }
+
+  .section-desc {
+    font-size: 1rem;
+    padding: 0 20px;
+  }
+
+  .timeline-line {
+    left: 20px;
+  }
+
+  .process-card {
+    width: calc(100% - 60px);
+    margin-left: 50px;
+    padding: 20px;
+    text-align: left !important;
+  }
+
+  .process-card:nth-child(even) .step-marker,
+  .process-card:nth-child(odd) .step-marker {
+    left: -45px;
+    right: auto;
+    width: 35px;
+    height: 35px;
+    font-size: 0.8rem;
+  }
+}
+
+/* FAQ Section */
+.faq-section {
+  padding: 100px 0;
+  background: rgba(255, 255, 255, 0.01);
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.faq-image img {
+  width: 100%;
+  border-radius: 40px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.faq-content .cta-tag {
+  color: var(--primary);
+  font-weight: 600;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.faq-title {
+  text-align: left;
+  margin-bottom: 40px;
+  font-size: 2.5rem;
+  line-height: 1.2;
+}
+
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.accordion-item {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.accordion-header {
+  padding: 25px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.accordion-header h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-dim);
+  transition: color 0.3s ease;
+}
+
+.accordion-header .icon {
+  font-size: 1.5rem;
+  color: var(--text-dim);
+  transition: transform 0.3s ease;
+}
+
+.accordion-item.active .accordion-header h3 {
+  color: white;
+}
+
+.accordion-item.active .accordion-header .icon {
+  color: var(--primary);
+  transform: rotate(180deg);
+}
+
+.accordion-body {
+  max-height: 0;
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  padding-bottom: 0;
+}
+
+.accordion-item.active .accordion-body {
+  max-height: 200px;
+  opacity: 1;
+  padding-bottom: 30px;
+}
+
+.accordion-body p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+@media (max-width: 992px) {
+  .faq-grid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+  
+  .faq-title {
+    font-size: 2rem;
+  }
+}
 @media (max-width: 768px) {
   .hero-title {
     font-size: 3rem;
@@ -176,4 +472,3 @@
     align-items: center;
   }
 }
-

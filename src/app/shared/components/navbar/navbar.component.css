@@ -59,8 +59,17 @@
 .btn-nav {
   background: linear-gradient(135deg, var(--primary), var(--secondary));
   color: white !important;
-  padding: 8px 22px !important;
+  padding: 10px 25px !important;
   border-radius: 50px;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(0, 162, 255, 0.3);
+  transition: all 0.3s ease !important;
+}
+
+.btn-nav:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 162, 255, 0.5);
+  filter: brightness(1.1);
 }
 
 .mobile-menu-btn {

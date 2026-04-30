@@ -127,6 +127,107 @@
   </div>
 </section>
 
+<!-- Our Process Section -->
+<section class="our-process">
+  <div class="process-globe"></div>
+  <div class="container">
+    <h2 class="section-title">Our <span class="text-gradient">Process</span></h2>
+    <p class="section-desc">How we bring your vision to life, step by step.</p>
+    
+    <div class="process-steps">
+      <div class="timeline-line"></div>
+      
+      <div class="process-card glass-card">
+        <div class="step-marker">01</div>
+        <div class="step-content">
+          <h3>Discovery & Strategy</h3>
+          <p>We start by understanding your goals, audience, and market to build a solid roadmap.</p>
+        </div>
+      </div>
+      
+      <div class="process-card glass-card">
+        <div class="step-marker">02</div>
+        <div class="step-content">
+          <h3>Design & Prototyping</h3>
+          <p>Our designers create stunning visuals and interactive prototypes to align with your vision.</p>
+        </div>
+      </div>
+      
+      <div class="process-card glass-card">
+        <div class="step-marker">03</div>
+        <div class="step-content">
+          <h3>Development</h3>
+          <p>We turn designs into reality using the latest technologies and best coding practices.</p>
+        </div>
+      </div>
+      
+      <div class="process-card glass-card">
+        <div class="step-marker">04</div>
+        <div class="step-content">
+          <h3>Launch & Support</h3>
+          <p>We ensure a smooth launch and provide ongoing support to help your business grow.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="faq-section">
+  <div class="container faq-grid">
+    <div class="faq-image animate-fade-in">
+      <img src="assets/agency_team_photo.png" alt="Our Team" class="rounded-img">
+    </div>
+    
+    <div class="faq-content">
+      <span class="cta-tag">— Nova Capital is different</span>
+      <h2 class="faq-title">Our web development begins and ends with a <span class="text-gradient">first-class user experience.</span></h2>
+      
+      <div class="accordion">
+        <div class="accordion-item" [class.active]="activeIndex === 0">
+          <div class="accordion-header" (click)="toggleFAQ(0)">
+            <h3>What sets Nova Capital apart from other agencies?</h3>
+            <span class="icon">{{ activeIndex === 0 ? '−' : '+' }}</span>
+          </div>
+          <div class="accordion-body">
+            <p>We engineer strategic digital ecosystems rather than just websites. As your technical partner, we align every line of code with your core business objectives to ensure long-term ROI and operational efficiency.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item" [class.active]="activeIndex === 1">
+          <div class="accordion-header" (click)="toggleFAQ(1)">
+            <h3>Which industries do you specialize in?</h3>
+            <span class="icon">{{ activeIndex === 1 ? '−' : '+' }}</span>
+          </div>
+          <div class="accordion-body">
+            <p>We work across a variety of sectors including E-commerce, Fintech, Real Estate, and Healthcare, providing tailor-made solutions that solve industry-specific challenges.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item" [class.active]="activeIndex === 2">
+          <div class="accordion-header" (click)="toggleFAQ(2)">
+            <h3>What is "Precision-Driven Engineering"?</h3>
+            <span class="icon">{{ activeIndex === 2 ? '−' : '+' }}</span>
+          </div>
+          <div class="accordion-body">
+            <p>It's our commitment to quality. Every project undergoes rigorous testing and performance optimization to ensure it's fast, secure, and scalable from day one.</p>
+          </div>
+        </div>
+
+        <div class="accordion-item" [class.active]="activeIndex === 3">
+          <div class="accordion-header" (click)="toggleFAQ(3)">
+            <h3>How do you support business scalability?</h3>
+            <span class="icon">{{ activeIndex === 3 ? '−' : '+' }}</span>
+          </div>
+          <div class="accordion-body">
+            <p>Our solutions are built with growth in mind. We use modular architectures and cloud-native technologies that can easily scale as your user base and data requirements increase.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- Final CTA Section -->
 <section class="final-cta">
   <div class="container cta-box glass-card animate-fade-in">
